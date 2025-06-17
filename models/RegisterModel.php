@@ -68,10 +68,11 @@ class RegisterModel {
                                 $provider_type) {
         $params = [
             'p_name' => $name,
-            'p_password' => $password,
-            'p_address' => $address,
+            'p_pass' => $password,              // ✅ corrected key
+            'p_addr' => $address,               // ✅ corrected key
             'p_phone' => $phone,
             'p_email' => $email,
+            'p_type' => $provider_type,         // ✅ newly added (maps to 'service_provider' user type)
             'p_experience' => $experience,
             'p_gender' => $gender,
             'p_dob' => $dob,

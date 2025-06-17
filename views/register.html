@@ -21,9 +21,9 @@
       <option value="cook">Cook</option>
       <option value="cleaner">Cleaner</option>
       <option value="security guard">Security Guard</option>
-      <option value="chauffer">Chauffer</option>
+      <option value="chauffeur">Chauffeur</option>
       <option value="baby sitter">Baby Sitter</option>
-      <option value="relocators">Relocators</option>
+      <option value="re-locator">Re-locator</option>
       <option value="masseuse">Masseuse</option>
     </select><br>
 
@@ -67,8 +67,8 @@
       </select><br>
     </div>
 
-    <!-- Chauffer Fields -->
-<div id="chaufferFields" style="display:none;">
+    <!-- Chauffeur Fields -->
+<div id="chauffeurFields" style="display:none;">
   <label>Vehicle Types:</label>
   <input type="text" name="ch_vehicle_types" placeholder="e.g., light, heavy"><br>
   <label>Licence Document:</label>
@@ -77,8 +77,8 @@
   <input type="date" name="ch_licence_valid_until"><br>
 </div>
 
-<!-- Relocator Fields -->
-<div id="relocatorFields" style="display:none;">
+<!-- Re-locator Fields -->
+<div id="re-locatorFields" style="display:none;">
   <label>Vehicle Type:</label>
   <input type="text" name="rl_vehicle_type" placeholder="e.g., truck, van"><br>
 </div>
@@ -110,8 +110,8 @@ function toggleTypeFields() {
   document.getElementById("cookFields").style.display = (type === "cook") ? "block" : "none";
   document.getElementById("cleanerFields").style.display = (type === "cleaner") ? "block" : "none";
   document.getElementById("sgFields").style.display = (type === "security guard") ? "block" : "none";
-    document.getElementById("chaufferFields").style.display = (type === "chauffer") ? "block" : "none";
-    document.getElementById("relocatorFields").style.display = (type === "relocators") ? "block" : "none";
+    document.getElementById("chauffeurFields").style.display = (type === "chauffeur") ? "block" : "none";
+    document.getElementById("re-locatorFields").style.display = (type === "re-locator") ? "block" : "none";
     document.getElementById("babysitterFields").style.display = (type === "baby sitter") ? "block" : "none";
   document.getElementById("masseuseFields").style.display = (type === "masseuse") ? "block" : "none";
   // Add other type-specific toggles if you want

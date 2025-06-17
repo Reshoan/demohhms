@@ -91,7 +91,7 @@ class RegisterController {
                         );
                         break;
 
-                    case 'chauffer':
+                    case 'chauffeur':
                         $ch_vehicle_types = isset($_POST['ch_vehicle_types']) ? $_POST['ch_vehicle_types'] : '';
                         $ch_licence_doc = isset($_POST['ch_licence_doc']) ? $_POST['ch_licence_doc'] : '';
                         $ch_licence_valid_until = isset($_POST['ch_licence_valid_until']) ? $_POST['ch_licence_valid_until'] : null;
@@ -119,7 +119,7 @@ class RegisterController {
                         );
                         break;
 
-                    case 'relocators':
+                    case 're-locator':
                         $rl_vehicle_type = isset($_POST['rl_vehicle_type']) ? $_POST['rl_vehicle_type'] : '';
                         $result = $this->model->registerRelocator(
                             $name, $hashedPassword, $address, $phone, $email,
