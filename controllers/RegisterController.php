@@ -95,6 +95,12 @@ class RegisterController {
                         $ch_vehicle_types = isset($_POST['ch_vehicle_types']) ? $_POST['ch_vehicle_types'] : '';
                         $ch_licence_doc = isset($_POST['ch_licence_doc']) ? $_POST['ch_licence_doc'] : '';
                         $ch_licence_valid_until = isset($_POST['ch_licence_valid_until']) ? $_POST['ch_licence_valid_until'] : null;
+
+                        if ($ch_licence_valid_until) {
+                            // Convert date to 'd-M-Y' format (Oracle-compatible)
+                            $ch_licence_valid_until = date('d-M-Y', strtotime($ch_licence_valid_until));
+                        }
+
                         $result = $this->model->registerChauffer(
                             $name, $hashedPassword, $address, $phone, $email,
                             $sp_experience, $sp_gender, $sp_dob, $sp_nid_no,
