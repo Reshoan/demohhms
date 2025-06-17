@@ -1,0 +1,119 @@
+<form method="POST" action="../controllers/RegisterController.php">
+  <label>Name:</label><input type="text" name="name" required><br>
+  <label>Password:</label><input type="password" name="password" required><br>
+  <label>Address:</label><input type="text" name="address" required><br>
+  <label>Phone:</label><input type="text" name="phone" required><br>
+  <label>Email:</label><input type="email" name="email" required><br>
+
+  <label>User Type:</label>
+  <select name="user_type" id="user_type" onchange="toggleProviderFields()" required>
+    <option value="customer">Customer</option>
+    <option value="service_provider">Service Provider</option>
+  </select><br>
+
+  <div id="providerFields" style="display:none;">
+    <label>Provider Type:</label>
+    <select name="provider_type" id="provider_type" onchange="toggleTypeFields()">
+      <option value="">Select</option>
+      <option value="plumber">Plumber</option>
+      <option value="electrician">Electrician</option>
+      <option value="gardener">Gardener</option>
+      <option value="cook">Cook</option>
+      <option value="cleaner">Cleaner</option>
+      <option value="security guard">Security Guard</option>
+      <option value="chauffer">Chauffer</option>
+      <option value="baby sitter">Baby Sitter</option>
+      <option value="relocators">Relocators</option>
+      <option value="masseuse">Masseuse</option>
+    </select><br>
+
+    <!-- Service Provider Common Fields -->
+    <label>Experience (years):</label><input type="number" name="sp_experience" min="0" max="50"><br>
+    <label>Gender:</label>
+    <select name="sp_gender">
+      <option value="">Select</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select><br>
+    <label>Date of Birth:</label><input type="date" name="sp_dob"><br>
+    <label>NID Number:</label><input type="text" name="sp_nid_no"><br>
+    <label>Expected Salary:</label><input type="number" name="sp_expected_salary" min="0"><br>
+    <label>Education:</label><input type="text" name="sp_education"><br>
+    <label>Certification:</label><input type="text" name="sp_certification"><br>
+    <!-- sp_status defaults to 'A', so no need to input -->
+
+    <!-- Cook -->
+    <div id="cookFields" style="display:none;">
+      <label>Cuisine Expertise:</label><input type="text" name="ck_cuisine"><br>
+      <label>Max People Served:</label><input type="number" name="ck_people"><br>
+    </div>
+
+    <!-- Cleaner -->
+    <div id="cleanerFields" style="display:none;">
+      <label>Employment Type:</label>
+      <select name="cl_type">
+        <option value="full time">Full Time</option>
+        <option value="part time">Part Time</option>
+      </select><br>
+    </div>
+
+    <!-- Security Guard -->
+    <div id="sgFields" style="display:none;">
+      <label>Weapons Training:</label>
+      <select name="sg_training">
+        <option value="Y">Yes</option>
+        <option value="N">No</option>
+      </select><br>
+    </div>
+
+    <!-- Chauffer Fields -->
+<div id="chaufferFields" style="display:none;">
+  <label>Vehicle Types:</label>
+  <input type="text" name="ch_vehicle_types" placeholder="e.g., light, heavy"><br>
+  <label>Licence Document:</label>
+  <input type="text" name="ch_licence_doc" placeholder="Licence Document Name/Number"><br>
+  <label>Licence Valid Until:</label>
+  <input type="date" name="ch_licence_valid_until"><br>
+</div>
+
+<!-- Relocator Fields -->
+<div id="relocatorFields" style="display:none;">
+  <label>Vehicle Type:</label>
+  <input type="text" name="rl_vehicle_type" placeholder="e.g., truck, van"><br>
+</div>
+
+<!-- Babysitter Fields -->
+<div id="babysitterFields" style="display:none;">
+  <label>Languages:</label>
+  <input type="text" name="bs_languages" placeholder="e.g., English, Bengali"><br>
+</div>
+
+<!-- Masseuse Fields -->
+<div id="masseuseFields" style="display:none;">
+  <label>Speciality:</label>
+  <input type="text" name="ms_speciality" placeholder="e.g., post operational"><br>
+</div>
+  </div>
+
+  <input type="submit" value="Register">
+</form>
+
+<script>
+function toggleProviderFields() {
+  const userType = document.getElementById("user_type").value;
+  document.getElementById("providerFields").style.display = (userType === "service_provider") ? "block" : "none";
+}
+
+function toggleTypeFields() {
+  const type = document.getElementById("provider_type").value;
+  document.getElementById("cookFields").style.display = (type === "cook") ? "block" : "none";
+  document.getElementById("cleanerFields").style.display = (type === "cleaner") ? "block" : "none";
+  document.getElementById("sgFields").style.display = (type === "security guard") ? "block" : "none";
+    document.getElementById("chaufferFields").style.display = (type === "chauffer") ? "block" : "none";
+    document.getElementById("relocatorFields").style.display = (type === "relocators") ? "block" : "none";
+    document.getElementById("babysitterFields").style.display = (type === "baby sitter") ? "block" : "none";
+  document.getElementById("masseuseFields").style.display = (type === "masseuse") ? "block" : "none";
+  // Add other type-specific toggles if you want
+}
+</script>
