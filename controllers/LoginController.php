@@ -1,4 +1,5 @@
 <?php
+
 require_once(__DIR__ . '/../models/LoginModel.php');
 
 class LoginController {
@@ -24,7 +25,7 @@ class LoginController {
                 $_SESSION['user_type'] = $result['user_type'];
                 $_SESSION['user_name'] = $result['user_name'];
 
-                header("Location: ../views/register.html"); // Adjust path if needed
+                header("Location: ../controllers/ProfileController.php?action=edit");
                 exit();
             } else {
                 $error = "Invalid email or password.";

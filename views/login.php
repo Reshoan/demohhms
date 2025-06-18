@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login Test</title>
+  <title>Login</title>
 </head>
 <body>
   <h2>Login Test</h2>
@@ -11,7 +11,7 @@
     <p style="color:red;"><?php echo htmlspecialchars($error); ?></p>
   <?php endif; ?>
 
-  <form method="POST" action="">
+  <form method="POST" action="../controllers/LoginController.php">
     <label>Email:</label><br>
     <input type="email" name="email" required><br><br>
     <label>Password:</label><br>

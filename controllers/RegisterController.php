@@ -152,10 +152,12 @@ class RegisterController {
         // Handle result
         if ($result === true) {
             echo "Registration successful!";
+            header("Location: ../views/login.php");
         } else {
             echo "Registration failed: " . $result;
         }
     }
+    
 }
 
 // Instantiate and run
