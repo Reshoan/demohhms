@@ -24,8 +24,7 @@ $userId = $_SESSION['user_id'];
         <label>Name:</label><br>
         <input type="text" name="name" value="<?= htmlspecialchars($userData['us_name']) ?>"><br>
 
-        <label>Password:</label><br>
-        <input type="password" name="password" placeholder="Leave blank to keep current"><br>
+        
 
         <label>Address:</label><br>
         <input type="text" name="address" value="<?= htmlspecialchars($userData['us_address']) ?>"><br>
